@@ -1,7 +1,9 @@
-import { View, Text } from 'react-native'
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 export default function TipsScreen() {
   return (
-    <View style={styles.container}> 
+    <View style={styles.container}>
+      <StatusBar style="auto" />
       <Text>TipsScreen</Text>
     </View>
   )
