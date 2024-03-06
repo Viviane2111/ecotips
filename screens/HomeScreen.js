@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
 import getTips from '../collection/ecotips';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
 
 const [randomTip, setRandomTip] = useState('');
 
@@ -15,8 +15,8 @@ useEffect(() => {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text style={styles.title}>HOME</Text>
-      <Text style={styles.tips}>{randomTip}</Text>
-      <Text>BLABLABLA</Text>
+      {/* <Text style={styles.tips}>{randomTip}</Text> */}
+      <Text onPress={() => navigation.navigate('Tips')}>Go TIPS</Text>
     </View>
   )
 }
