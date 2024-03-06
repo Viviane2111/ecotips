@@ -1,10 +1,22 @@
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
+import getTips from '../collection/ecotips';
+
 export default function HomeScreen() {
+
+const [randomTip, setRandomTip] = useState('');
+
+useEffect(() => {
+  // const tip = getTips();
+  setRandomTip(getTips());
+}, []);
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text>HomeScreen</Text>
+      <Text style={styles.title}>HOME</Text>
+      <Text style={styles.tips}>{randomTip}</Text>
+      <Text>BLABLABLA</Text>
     </View>
   )
 }
@@ -17,4 +29,13 @@ const styles = StyleSheet.create({
 	  alignItems: 'center',
 	  justifyContent: 'center',
 	},
+  title: {
+    fontSize: 50,
+  },
+  tips: {
+    width: "80%",
+    fontSize: 20,
+    marginTop: 60,
+    marginBottom: 30,
+  },
 });
