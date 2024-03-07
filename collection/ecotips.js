@@ -50,7 +50,7 @@ function getTips() {
       { "id": 46, "texte": "Participez à des actions de sensibilisation à l'environnement dans votre communauté." }
    ];
    const randomTips = tips[Math.floor(Math.random()*tips.length)];
-   console.log(randomTips.texte);
+   // console.log(randomTips.texte);
    return randomTips.texte;
 }
 

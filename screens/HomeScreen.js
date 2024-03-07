@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import getTips from '../collection/ecotips';
+import EcotrackLogo from '../components/EcotrackLogo';
 
 export default function HomeScreen({navigation}) {
 
@@ -11,12 +12,14 @@ useEffect(() => {
   // const tip = getTips();
   setRandomTip(getTips());
 }, []);
+
   return (
     <View style={styles.container}>
+      <EcotrackLogo />
       <StatusBar style="auto" />
-      <Text style={styles.title}>HOME</Text>
+      <Text style={styles.title} onPress={() => navigation.navigate('Tips')}>HOME</Text>
       {/* <Text style={styles.tips}>{randomTip}</Text> */}
-      <Text onPress={() => navigation.navigate('Tips')}>Go TIPS</Text>
+      <Text>Go TIPS</Text>
     </View>
   )
 }
@@ -25,6 +28,7 @@ useEffect(() => {
 const styles = StyleSheet.create({
    container: {
 		flex: 1,
+    gap: 50,
 		backgroundColor: '#fff',
 	  alignItems: 'center',
 	  justifyContent: 'center',

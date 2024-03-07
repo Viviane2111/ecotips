@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image } from 'react-native';
 
-export default function constEcotrackLogo() {
+export default function EcotrackLogo() {
    return (
-      <>
+      <><View>
          <Image
             source={require("../assets/Ecotrack-logo.png")}
             style={{
@@ -13,15 +13,13 @@ export default function constEcotrackLogo() {
          />
          <Text 
             style={{
-               fontSize: 36,
+               fontSize: 26,
                textAlign: "center",
                fontWeight: "700",
             }} 
          >
             ECOTRACK
          </Text>
-      </>
+      </View></>
    )
 }
-
-
